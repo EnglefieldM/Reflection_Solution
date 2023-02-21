@@ -1,0 +1,48 @@
+using System;
+
+namespace CarInformation
+{
+    class Car
+    {
+        private readonly string CarMake;
+        private readonly string CarModel;
+        private readonly string CarReg;
+        private readonly int CarCurrentValue;
+        private readonly int CarYearReg;
+
+        public Car(string _CarMake, string _CarModel, string _CarReg, int _CarCurrentValue, int _CarYearReg)
+        {
+            CarMake = _CarMake;
+            CarModel = _CarModel;
+            CarReg = _CarReg;
+            CarCurrentValue = _CarCurrentValue;
+            CarYearReg = _CarYearReg;
+        }
+
+        public int CurrentValue()
+        {
+            return CarCurrentValue;
+        }
+
+        public int CarRegYear()
+        {
+            return CarYearReg;
+        }
+
+        public override string ToString()
+        {             
+            return CarMake + "\n" + CarModel + "\n" + CarReg + "\n" + CurrentValue() + "\n" + CarRegYear();
+        }
+    }
+
+    class Test
+    {
+        static void Main()
+        {
+            Car MyCar = new Car("Nissan", "Qashqai", "AB12 CDE", 12000, 2019);
+
+            Console.WriteLine(MyCar.ToString());
+            Console.ReadLine();
+        }
+    }
+}
